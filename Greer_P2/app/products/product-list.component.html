@@ -1,0 +1,55 @@
+<div class='panel panel-primary' *ngIf="product">
+    <div class='panel-heading'>
+        {{pageTitle}}
+    </div>
+
+    <!-- Filter the Products   -->
+    <div class='panel-body'>
+
+        <div class='has-error' *ngIf='errorMessage'>{{errorMessage}}</div>
+
+        <div class='table-responsive'>
+            <table class='table'>
+                <thead>
+                    <tr>
+                        <th>
+                            <button class='btn btn-primary'
+                                (click)='toggleImage()'>
+                                {{showImage ? 'Hide' : 'Show'}} Image
+                            </button>
+                        </th>
+                        <th>Product</th>
+                        <th>Code</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of product">
+                        <td>
+                            <img *ngIf='showImage'
+                                 [src]='product.imageURL'
+                                 [title]='product.productName | uppercase'
+                                 [style.width.px]='imageWidth' 
+                                 [style.margin.px]='imageMargin'>
+                        </td>
+                        <td><a [routerLink]="['/product', product.productID]">
+                            {{product.productName}}
+                            </a>
+                        </td>
+                        <td>{{ product.productID }}</td>
+                        <td>{{ product.productDescription }}</td>
+                        <td>{{ product.price | currency:'USD':true:'1.2-2' }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class='panel-footer'>
+            <a class='btn btn-default' (click)='onBack()' style='width:80px'>
+                <i class='glyphicon glyphicon-chevron-left'></i> Back
+            </a>
+        </div>
+
+    </div>
+</div>

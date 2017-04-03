@@ -1,0 +1,42 @@
+[
+      
+	{
+        
+		"categoryID": "1",
+        
+		"categoryName": "Rooster Teeth"
+      
+	},
+      
+	{
+       
+		"categoryID": "2",
+        
+		"categoryName": "Achievement Hunter"
+      
+	},
+           
+	{
+        
+		"categoryID": "3",
+        
+		"categoryName": "Funhaus"
+      
+	},
+            
+	{
+        
+		"categoryID": "4",
+        
+		"categoryName": "Outerwear"
+      
+	},
+            
+	{
+       "categoryID": "5",
+        
+		"categoryName": "Posters"
+      
+	}
+    
+]

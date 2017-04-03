@@ -1,0 +1,32 @@
+﻿<div class='panel panel-primary'>
+    <div class='panel-heading'>
+        {{pageTitle}}
+    </div>
+    <!-- Filter the Products   -->
+    <div class='panel-body'>
+        <div class='row'>
+        <div class='has-error' *ngIf='errorMessage'>{{errorMessage}}</div>
+        <div class='table-responsive'>
+            <table class='table'
+                   *ngIf='categories && categories.length'>
+                <thead>
+                    <tr>
+                        <th>Category Name</th>
+                        <th>CategoryID</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let category of categories | productFilter:listFilter'>
+                        <td>
+                            <a [routerLink]="['/categories', category.categoryID]">
+                                {{category.categoryName}}
+                            </a>
+                        </td>
+                        <td>{{category.categoryID}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</div>
